@@ -13,7 +13,13 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        // get all articles
+        $articles = Article::with('category')->latest()->get()->groupBy('category_id');
+
+        // return view
+        return inertia('Articles/Index', [
+            'articles' => $articles
+        ]);
     }
 
     /**
@@ -21,7 +27,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Articles/Create');
     }
 
     /**
@@ -29,7 +35,11 @@ class ArticleController extends Controller
      */
     public function store(StoreArticleRequest $request)
     {
-        //
+        // create articles
+        Article::create($request->all());
+
+        // redirect 
+        return redirect()->route('article.index')->with('success', 'Artikel Berhasil Diunggah!');
     }
 
     /**

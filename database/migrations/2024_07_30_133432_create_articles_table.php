@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('header')->nullable();
             $table->string('title');
             $table->string('slug');
-            $table->string('exceprt');
+            $table->text('excerpt');
             $table->text('body');
             $table->foreignId('category_id')
                 ->constrained()

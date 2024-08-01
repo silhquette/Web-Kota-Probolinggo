@@ -11,7 +11,7 @@ class StoreArticleRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class StoreArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'header',
+            'title' => 'required|min:10',
+            'slug' => 'required|min:10',
+            'excerpt' => 'required|min:10',
+            'body' => 'required|min:10',
+            'category_id' => 'required|exists:categories,id',
+            'user_id'=> 'required|exists:users,id',
         ];
     }
 }
