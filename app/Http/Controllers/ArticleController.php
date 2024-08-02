@@ -14,7 +14,7 @@ class ArticleController extends Controller
     public function index()
     {
         // get all articles
-        $articles = Article::with('category')->latest()->get()->groupBy('category_id');
+        $articles = Article::with(['category', 'user'])->latest()->get();
 
         // return view
         return inertia('Articles/Index', [

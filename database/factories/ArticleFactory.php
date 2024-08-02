@@ -21,7 +21,7 @@ class ArticleFactory extends Factory
         return [
             'title' => $this->faker->sentence(5),
             'slug' => $this->faker->slug(),
-            'excerpt' => $this->faker->paragraph(12),
+            'excerpt' => $this->faker->paragraph(3),
             'body' => $this->faker->paragraph(23),
             'category_id' => Category::all()->random()->id,
             'user_id' => User::all()->random()->id,
