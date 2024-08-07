@@ -1,9 +1,9 @@
 <?php
 
 use Inertia\Inertia;
-use App\Models\Statistic;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StatisticController;
@@ -39,6 +39,19 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/article', ArticleController::class);
-Route::resource('/statistic', StatisticController::class);
+Route::get('/statistic/data-statistik', [StatisticController::class, 'dataStatistik'])->name('statistic.data-statistik');
+Route::get('/statistic/daftar-kota', [StatisticController::class, 'daftarKota'])->name('statistic.daftar-kota');
+
+Route::prefix('/profile')->group(function () {
+    Route::get('/sejarah-kota', [AboutController::class, 'sejarahKota'])->name('profile.sejarah');
+    Route::get('/lambang-daerah', [AboutController::class, 'lambangDaerah'])->name('profile.lambang');
+    Route::get('/visi-misi', [AboutController::class, 'visiMisi'])->name('profile.visimisi');
+    Route::get('/gambaran-umum', [AboutController::class, 'gambaranUmum'])->name('profile.gambaran');
+    Route::get('/tupoksi-pemerintah', [AboutController::class, 'tupoksi'])->name('profile.tupoksi');
+    Route::get('/maskot-kota', [AboutController::class, 'maskot'])->name('profile.maskot');
+    Route::get('/struktur-pemerintahan', [AboutController::class, 'struktur'])->name('profile.struktur');
+    Route::get('/lhkpn', [AboutController::class, 'lhkpn'])->name('profile.lhkpn');
+    Route::get('/penghargaan', [AboutController::class, 'penghargaan'])->name('profile.penghargaan');
+});
 
 require __DIR__.'/auth.php';

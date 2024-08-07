@@ -13,8 +13,8 @@ export default function ArticleIndex({ articles, session }) {
 
   return (
     <GuestLayout>
-      <h1 className="text-3xl font-extrabold max-w-[1440px] mx-auto my-8">
-        Selutuh Berita
+      <h1 className="text-3xl text-blue-800 font-extrabold max-w-[1440px] mx-auto my-8">
+        Seluruh Berita
       </h1>
       <div className="grid grid-cols-4 gap-8 max-w-[1440px] mx-auto">
         {/* Card */}
@@ -36,7 +36,7 @@ export default function ArticleIndex({ articles, session }) {
                 )}
               </caption>
             </div>
-            <h2 className="text-2xl font-bold h-16">
+            <h2 className="text-2xl font-semibold h-16 font-serif">
               {articles.title}
             </h2>
             <p>

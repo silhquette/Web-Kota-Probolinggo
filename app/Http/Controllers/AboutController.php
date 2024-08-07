@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Award;
+use Illuminate\Http\Request;
+
+class AboutController extends Controller
+{
+    public function sejarahKota() {
+        return inertia('About/Probolinggo/Sejarah');
+    }
+
+    public function lambangDaerah() {
+        return inertia('About/Probolinggo/Lambang');
+    }
+
+    public function visiMisi() {
+        return inertia('About/Probolinggo/VisiMisi');
+    }
+
+    public function gambaranUmum() {
+        return inertia('About/Probolinggo/GambaranUmum');
+    }
+
+    public function tupoksi() {
+        return inertia('About/Probolinggo/Tupoksi');
+    }
+
+    public function maskot() {
+        return inertia('About/Probolinggo/Maskot');
+    }
+
+    public function struktur() {
+        return inertia('About/Probolinggo/Struktur');
+    }
+
+    public function lhkpn() {
+        return inertia('About/Probolinggo/LHKPN');
+    }
+
+    public function penghargaan() {
+        $awards = Award::all()->groupBy('year');
+
+        // return $awards;
+
+        return inertia('About/Probolinggo/Penghargaan',[
+            'awards' => $awards
+        ]);
+    }
+}
