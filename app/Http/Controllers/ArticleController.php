@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
 
@@ -14,11 +15,17 @@ class ArticleController extends Controller
     public function index()
     {
         // get all articles
-        $articles = Article::with(['category', 'user'])->latest()->get();
+        $latest = Article::with(['category', 'user'])->latest()->limit(4)->get();
+        $categories = Category::with(['articles' => function ($query) {
+            $query->with(['category', 'user'])->orderBy('created_at', 'desc');
+        }])->get();
+
+        // dump($categories);
 
         // return view
         return inertia('Articles/Index', [
-            'articles' => $articles
+            'latest' => $latest,
+            'categories' => $categories
         ]);
     }
 

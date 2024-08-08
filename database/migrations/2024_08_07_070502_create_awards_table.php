@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('awards', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->mediumText('title');
             $table->string('year');
         });
     }
