@@ -1,3 +1,9 @@
+//import time difference
+import moment from 'moment';
+
+//import link
+import { Link } from '@inertiajs/react';
+
 export default function ArticleCard({
     article,
     index = 0,
@@ -25,22 +31,21 @@ export default function ArticleCard({
     };
 
     return (
-        <div key={index} className={"flex flex-col gap-2 " + className}>
-            <img
-                src="/assets/images/thumbnail.webp"
-                alt="thumbnail"
-                className={"object-cover rounded-xl " + getHeight()}
-            />
+        <Link href={'/article/' + article.slug} key={index} className={"group transition-all flex flex-col gap-2 " + className}>
+            <div className={'overflow-hidden rounded-xl ' + getHeight()}>
+                <img
+                    src="/assets/images/thumbnail.webp"
+                    alt="thumbnail"
+                    className="h-full w-full object-cover transition-all group-hover:shadow-md group-hover:scale-110 group-hover:shadow-blue-100"
+                />
+            </div>
             <div className="flex gap-2 text-gray-500">
                 <caption>{article.user.name}</caption> -{" "}
                 <caption>
-                    {formatter.format(
-                        Math.round(new Date(article.created_at) / 86400000),
-                        "day"
-                    )}
+                    {moment(article.created_at).fromNow()}
                 </caption>
             </div>
-            <h2 className="text-2xl font-semibold h-16 font-serif">
+            <h2 className="group-hover:text-blue-800 text-2xl font-semibold md:h-16 font-serif">
                 {article.title.length > 35
                     ? article.title.substring(0, 35) + "..."
                     : article.title}
@@ -57,6 +62,6 @@ export default function ArticleCard({
                     {article.category.name}
                 </div>
             )}
-        </div>
+        </Link>
     );
 }

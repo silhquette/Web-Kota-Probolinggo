@@ -10,9 +10,10 @@ import { Head, Link, useForm } from "@inertiajs/react";
 //import card
 import ArticleCard from "@/Components/ArticleCard";
 
+//import moment
+import moment from 'moment';
+
 export default function ArticleIndex({ latest, categories, session }) {
-    const formatter = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
-    // console.log(categories);
 
     return (
         <GuestLayout>
@@ -40,41 +41,36 @@ export default function ArticleIndex({ latest, categories, session }) {
                     ImageHeight="full"
                     className="row-span-2"
                 />
-                <div className="relative flex flex-col col-span-2 row-span-2 gap-2">
+                <Link href={'/article/' + latest[0].slug} className="group relative flex flex-col md:col-span-2 md:row-span-2 gap-2 overflow-hidden rounded-xl transition-all">
                     <img
                         src="/assets/images/thumbnail.webp"
                         alt="thumbnail"
-                        className="aspect-square object-cover rounded-xl"
+                        className="aspect-square object-cover group-hover:scale-110 transition-all"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 top-0 rounded-xl bg-gradient-to-b to-black from-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6">
+                    <div className="absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b to-black from-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
                         <div className=" flex gap-2 text-gray-400">
                             <caption>{latest[2].user.name}</caption> -{" "}
                             <caption>
-                                {formatter.format(
-                                    Math.round(
-                                        new Date(latest[2].created_at) /
-                                            86400000
-                                    ),
-                                    "day"
-                                )}
+                                {moment(latest[2].created_at).fromNow()}
                             </caption>
                         </div>
-                        <h2 className="text-2xl font-semibold h-16 font-serif text-white">
+                        <h2 className="group-hover:text-blue-400 text-2xl font-semibold font-serif text-white">
                             {latest[2].title.length > 40
                                 ? latest[2].title.substring(0, 40) + "..."
                                 : latest[2].title}
                         </h2>
-                        <p className="text-gray-300">
+                        <p className="text-gray-300 hidden md:inline">
                             {latest[2].excerpt.length > 155
-                                ? latest[2].excerpt.substring(0, 155) + "..."
+                                ? latest[2].excerpt.substring(0, 155) +
+                                    "..."
                                 : latest[2].excerpt}
                         </p>
                         <div className="w-fit text-blue-400">
                             {latest[2].category.name}
                         </div>
                     </div>
-                </div>
+                </Link>
                 <ArticleCard
                     article={latest[2]}
                     ImageHeight="min"

@@ -54,7 +54,20 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        // Eager load category and user for the article
+        $article->load(['category', 'user']);
+
+        //get all categories
+        $categories = Category::with(['articles'])->get();
+
+        //get latest posts
+        $latest = Article::with(['category', 'user'])->latest()->limit(7)->get();
+
+        return inertia('Articles/Show', [
+            'article' => $article,
+            'categories' => $categories,
+            'latest' => $latest,
+        ]);
     }
 
     /**
