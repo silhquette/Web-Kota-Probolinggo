@@ -12,7 +12,7 @@ export default function StatisticIndex({ statistics, session }) {
         <GuestLayout>
             <Head title="Data Statistik" />
 
-            <h1 className="text-3xl text-blue-800 font-extrabold max-w-[1440px] mx-auto my-8">
+            <h1 className="text-3xl text-blue-800 font-extrabold max-w-[1440px] mx-auto my-8 px-6">
                 Data Statistik Kota Probolinggo
             </h1>
             <div className="grid grid-cols-4 gap-8 max-w-[1440px] mx-auto">

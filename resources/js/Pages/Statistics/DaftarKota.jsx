@@ -12,7 +12,7 @@ export default function StatisticIndex({ statistics, session }) {
         <GuestLayout>
             <Head title="Daftar Kota" />
 
-            <div className="flex items-center justify-between max-w-[1440px] mx-auto my-8">
+            <div className="flex items-center justify-between max-w-[1440px] mx-auto my-8 px-6">
                 <h1 className="text-3xl text-blue-800 font-extrabold">
                     Daftar Data Kota Probolinggo Tahun 2023
                 </h1>

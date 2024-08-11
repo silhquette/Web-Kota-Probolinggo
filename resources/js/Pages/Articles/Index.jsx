@@ -19,7 +19,7 @@ export default function ArticleIndex({ latest, categories, session }) {
         <GuestLayout>
             <Head title="Berita" />
 
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-[1440px] mx-auto mt-12 mb-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-[1440px] mx-auto mt-12 mb-8 px-6">
                 <h1 className="text-4xl font-extrabold">Berita Terbaru</h1>
                 {/* <Link href="" className="flex gap-2 text-blue-700 font-semibold h-fit" >Lihat lebih banyak<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg></Link> */}
             </div>

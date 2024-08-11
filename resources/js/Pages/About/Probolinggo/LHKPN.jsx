@@ -79,7 +79,7 @@ export default function LHKPNIndex() {
         <GuestLayout>
             <Head title="LHKPN Kota Probolinggo" />
 
-            <div className="flex flex-col gap-4 max-w-[1024px] mx-auto my-8">
+            <div className="flex flex-col gap-4 max-w-[1024px] mx-auto my-8 px-6">
                 <h1 className="text-3xl md:text-5xl font-serif text-center mt-4 font-semibold">
                     LHKPN Kota Probolinggo
                 </h1>
