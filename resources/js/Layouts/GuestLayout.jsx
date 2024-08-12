@@ -4,6 +4,9 @@ import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 
+//import Footer
+import Footer from "@/Components/Footer";
+
 export default function Guest({ children }) {
     const profileItems = [
         {
@@ -45,7 +48,6 @@ export default function Guest({ children }) {
                 // More items...
             ],
         },
-        // More main items...
     ];
 
     const statisticItems = [
@@ -107,7 +109,9 @@ export default function Guest({ children }) {
                                         key={index}
                                         submenu={item.submenu}
                                     >
-                                        <a href={item.link || "#"}>{item.label}</a>
+                                        <a href={item.link || "#"}>
+                                            {item.label}
+                                        </a>
                                     </Dropdown.DropdownItem>
                                 ))}
                             </Dropdown.Content>
@@ -149,7 +153,9 @@ export default function Guest({ children }) {
                                         key={index}
                                         submenu={item.submenu}
                                     >
-                                        <a href={item.link || "#"}>{item.label}</a>
+                                        <a href={item.link || "#"}>
+                                            {item.label}
+                                        </a>
                                     </Dropdown.DropdownItem>
                                 ))}
                             </Dropdown.Content>
@@ -171,9 +177,11 @@ export default function Guest({ children }) {
                 </div>
             </div>
 
-            <div className="w-full pt-16 py-4 bg-white overflow-hidden min-h-[100vh]">
+            <div className="w-full pt-16 py-4 pb-12 bg-white overflow-hidden min-h-[100vh]">
                 {children}
             </div>
+
+            <Footer/>
         </div>
     );
 }

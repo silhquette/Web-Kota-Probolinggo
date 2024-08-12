@@ -90,7 +90,7 @@ export default function ArticleIndex({ latest, session }) {
         <GuestLayout>
             <Head title="Beranda" />
 
-            <img src="/assets/images/Background/1.jpg" alt="Header Website" className="w-full md:h-[100vh] relative -top-6 md:-top-16" />
+            <img src="/assets/images/Background/1.jpg" alt="Header Website" className="w-full md:h-[100vh] relative -top-6 md:-top-16 object-cover" />
             <div className="flex flex-col gap-6 max-w-[1440px] mx-auto px-6">
                 <div>
                     <h1 className="text-3xl md:text-5xl font-serif text-center mt-4 font-semibold">
