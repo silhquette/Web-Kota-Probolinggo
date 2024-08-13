@@ -41,11 +41,54 @@ export default function Guest({ children }) {
             ],
         },
         {
-            label: "Layanan Publik & Statistik",
+            label: "PPID",
             submenu: [
-                { label: "Daftar Nama Pejabat", link: "/daftar-nama-pejabat" },
-                { label: "Wali Kota Probolinggo", link: "/wali-kota" },
-                // More items...
+                { label: "Visi dan Misi", link: "/ppid/visi-misi" },
+                { label: "Tupoksi", link: "/ppid/tupoksi" },
+                { label: "Struktur Organisasi PPID", link: "/ppid/struktur" },
+                { label: "SK & SOP PPID", link: "/ppid/sk-sop" },
+                { label: "Sekertariat PPID", link: "/ppid/sekertariat" },
+                { label: "Maklumat Pelayanan", link: "/ppid/maklumat" },
+                { label: "PPID Pembantu", link: "/ppid/pembantu" },
+            ],
+        },
+    ];
+
+    const publicServices = [
+        {
+            label: "Alur dan Tata Cara",
+            submenu: [
+                {
+                    label: "Permohonan Informasi",
+                    link: "/layanan/tata-cara-permohonan-informasi",
+                },
+                {   label: "Keberatan Informasi", 
+                    link: "/profile/tata-cara-keberatan-informasi" },
+                {
+                    label: "Sengketa Informasi Publik",
+                    link: "/profile/tata-cara-sengketa-informasi",
+                },
+                {
+                    label: "Alasan Pengajuan Keberatan",
+                    link: "/profile/alasan-pengajuan-keberatan",
+                },
+            ],
+        },
+        {
+            label: "Tata Cara Pengajuan",
+            link: "/layanan/tata-cara-pengajuan"
+        },
+        {
+            label: "Permohonan Informasi",
+            submenu: [
+                {   
+                    label: "Permohonan Informasi Online", 
+                    link: "https://docs.google.com/forms/d/e/1FAIpQLSdbokgEv4HFV1CD7LZcAbDfoxY5a3cSHRnWWv-ylaSWY9pSOg/viewform" 
+                },
+                {   
+                    label: "Formulir Permohonan Informasi", 
+                    link: "/layanan/form-permohonan" 
+                },
             ],
         },
     ];
@@ -83,7 +126,7 @@ export default function Guest({ children }) {
                                 <button
                                     className={
                                         "flex items-center px-3 border-b-2 text-lg leading-4 font-medium bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 " +
-                                        (route().current("profile*")
+                                        (route().current("profile*") || route().current("ppid*")
                                             ? "text-gray-900 border-blue-700"
                                             : "text-gray-500 border-transparent")
                                     }
@@ -116,12 +159,44 @@ export default function Guest({ children }) {
                                 ))}
                             </Dropdown.Content>
                         </Dropdown>
-                        <NavLink
-                            href={route("dashboard")}
-                            active={route().current("dashboard")}
-                        >
-                            Layanan Publik
-                        </NavLink>
+                        <Dropdown>
+                            <Dropdown.Trigger>
+                                <button
+                                    className={
+                                        "flex items-center px-3 border-b-2 text-lg leading-4 font-medium bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 " +
+                                        (route().current("layanan*")
+                                            ? "text-gray-900 border-blue-700"
+                                            : "text-gray-500 border-transparent")
+                                    }
+                                >
+                                    <span>Layanan Publik</span>
+                                    <svg
+                                        className="ms-2 -me-0.5 h-4 w-4"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
+                            </Dropdown.Trigger>
+                            <Dropdown.Content>
+                                {publicServices.map((item, index) => (
+                                    <Dropdown.DropdownItem
+                                        key={index}
+                                        submenu={item.submenu}
+                                    >
+                                        <a href={item.link || "#"}>
+                                            {item.label}
+                                        </a>
+                                    </Dropdown.DropdownItem>
+                                ))}
+                            </Dropdown.Content>
+                        </Dropdown>
                         <Dropdown>
                             <Dropdown.Trigger>
                                 <button

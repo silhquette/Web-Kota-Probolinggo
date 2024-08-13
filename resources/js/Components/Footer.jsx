@@ -75,16 +75,6 @@ export default function Footer() {
         { title: "Kecamatan Kanigaran", link: "" },
         { title: "Kecamatan Kademangan", link: "" }
     ];
-    
-    const moreLinks = [
-        { title: "Aturan/Perda", link: "http://jdih.probolinggokota.go.id/" },
-        { title: "Daftar Informasi Publik (DIP)", link: "https://ppid.probolinggokota.go.id/layanan-informasi-publik/daftar-informasi-publik-skpd/" },
-        { title: "Daftar Aset & Inventaris", link: "https://drive.google.com/file/d/0B6VAFxfTdYDhSWpSa3RPYVpjeXc/view" },
-        { title: "Akses Informasi Publik", link: "https://ppid.probolinggokota.go.id/layanan-informasi-publik/akses-informasi-publik/" },
-        { title: "Berita", link: "https://ppid.probolinggokota.go.id/category/berita-ppid/" },
-        { title: "Informasi Publik", link: "https://ppid.probolinggokota.go.id/category/informasi-publik/" },
-        
-    ];
 
     return (
         <>
@@ -201,7 +191,7 @@ export default function Footer() {
                     </div>
                     <div className="basis-1/3 my-12 px-12 flex flex-col gap-4">
                         <h2 className="text-xl font-semibold">
-                            LINK BADAN / DINAS
+                            KONTAK PPID
                         </h2>
                         <div>
                             <div>Sekretariat kami berada di</div>
@@ -275,12 +265,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="bg-sky-950 text-white w-full text-center py-4 text-sm font-light">
-                <div className="flex gap-4 justify-center w-full mb-4">
-                    {moreLinks.map((item, index) => (
-                        <Link className="bg-sky-900 px-6 py-2 rounded-full" key={index} href={item.link}>{item.title}</Link>
-                    ))}
-                </div>
+            <div className="bg-blue-950 text-white w-full text-center py-4 text-sm font-light">
                 <div>Diskominfo Kota Probolinggo 2024</div>
             </div>
         </>

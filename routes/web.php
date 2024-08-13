@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicServiceController;
 use App\Http\Controllers\StatisticController;
 
 /*
@@ -54,6 +55,19 @@ Route::prefix('/profile')->group(function () {
     Route::get('/struktur-pemerintahan', [AboutController::class, 'struktur'])->name('profile.struktur');
     Route::get('/lhkpn', [AboutController::class, 'lhkpn'])->name('profile.lhkpn');
     Route::get('/penghargaan', [AboutController::class, 'penghargaan'])->name('profile.penghargaan');
+});
+
+Route::prefix('/ppid')->group(function () {
+    Route::get('/visi-misi', [AboutController::class, 'visiMisiPPID'])->name('ppid.visimisi');
+    Route::get('/tupoksi', [AboutController::class, 'tupoksiPPID'])->name('ppid.tupoksi');
+    Route::get('/struktur', [AboutController::class, 'strukturPPID'])->name('ppid.struktur');
+    Route::get('/sk-sop', [AboutController::class, 'suratKeterangan'])->name('ppid.suratKeterangan');
+    Route::get('/maklumat', [AboutController::class, 'maklumatPPID'])->name('ppid.maklumat');
+});
+
+Route::prefix('/layanan')->group(function () {
+    Route::get('/form-permohonan', [PublicServiceController::class, 'formPermohonan'])->name('layanan.form');
+    Route::get('/tata-cara-pengajuan', [PublicServiceController::class, 'caraPengajuan'])->name('layanan.pengajuan');
 });
 
 require __DIR__.'/auth.php';

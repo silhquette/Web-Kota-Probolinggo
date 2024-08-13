@@ -42,10 +42,24 @@ class AboutController extends Controller
     public function penghargaan() {
         $awards = Award::all()->groupBy('year');
 
-        // return $awards;
-
         return inertia('About/Probolinggo/Penghargaan',[
             'awards' => $awards
         ]);
+    }
+
+    public function visiMisiPPID() {
+        return inertia('About/PPID/VisiMisi');
+    }
+
+    public function tupoksiPPID() {
+        return inertia('About/PPID/Tupoksi');
+    }
+
+    public function strukturPPID() {
+        return inertia('About/PPID/Struktur');
+    }
+
+    public function maklumatPPID() {
+        return inertia('About/PPID/Maklumat');
     }
 }
