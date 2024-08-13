@@ -31,6 +31,10 @@ Route::get('/', [LandingController::class, 'index'])->name('landing');
 //     ]);
 // });
 
+Route::get('/pengaduan-resmi', function () {
+    return Inertia('Layanan/PengaduanResmi');
+})->name('layanan.pengaduan');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -68,6 +72,15 @@ Route::prefix('/ppid')->group(function () {
 Route::prefix('/layanan')->group(function () {
     Route::get('/form-permohonan', [PublicServiceController::class, 'formPermohonan'])->name('layanan.form');
     Route::get('/tata-cara-pengajuan', [PublicServiceController::class, 'caraPengajuan'])->name('layanan.pengajuan');
+    Route::get('/tata-cara-permohonan-informasi', [PublicServiceController::class, 'permohonanInformasi'])->name('layanan.permohonan');
+    Route::get('/tata-cara-keberatan-informasi', [PublicServiceController::class, 'keberatanInformasi'])->name('layanan.keberatan');
+    Route::get('/tata-cara-sengketa-informasi', [PublicServiceController::class, 'sengketaInformasi'])->name('layanan.sengketa');
+    Route::get('/alasan-pengajuan-keberatan', [PublicServiceController::class, 'alasanKeberatan'])->name('layanan.alasan');
+    Route::get('/form-keberatan-permohonan', [PublicServiceController::class, 'formKeberatan'])->name('layanan.formKeberatan');
+    Route::get('/jumlah-pemohon', [PublicServiceController::class, 'pemohon'])->name('layanan.pemohon');
+    Route::get('/laporan-tahunan', [PublicServiceController::class, 'laporanTahunan'])->name('layanan.tahunan');
+    Route::get('/laporan-akuntabilitas', [PublicServiceController::class, 'laporanAkuntabilitas'])->name('layanan.akuntabilitas');
+    Route::get('/aspirasi-pengaduan', [PublicServiceController::class, 'aspirasi'])->name('layanan.aspirasi');
 });
 
 require __DIR__.'/auth.php';

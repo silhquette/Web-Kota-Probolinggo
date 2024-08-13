@@ -199,8 +199,9 @@ export default function Footer() {
                                 Dinas Komunikasi dan Informatika Kota
                                 Probolinggo
                             </div>
-                            <div>Jalan : Dr. Saleh No. 05</div>
-                            <div>telp : 0335-422135</div>
+                            <div>Jl. Dr. Moch Saleh No. 05 Probolinggo</div>
+                            <div>Telp/ Fax: (0335) 422135</div>
+                            <div>E-Mail : diskominfo@probolinggokota.go.id</div>
                         </div>
                         <div>
                             <div>Jam Layanan :</div>

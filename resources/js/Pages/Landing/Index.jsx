@@ -33,32 +33,32 @@ export default function ArticleIndex({ latest, session }) {
         {
             image: '2.jpg',
             title: 'Daftar Informasi Publik',
-            desc: 'Daftar Informasi Publik Pemerintah Kota Madiun sesuai dengan PERKI Nomor 1 Tahun 2021 tentang Standar Layanan Informasi Publik.',
-            link: 'https://ppid.madiunkota.go.id/daftar/informasipublik'
+            desc: 'Daftar Informasi Publik Pemerintah Kota Probolinggo sesuai dengan PERKI Nomor 1 Tahun 2021 tentang Standar Layanan Informasi Publik.',
+            link: 'https://ppid.Probolinggokota.go.id/daftar/informasipublik'
         },
         {
             image: '3.jpg',
             title: 'Informasi Berkala',
             desc: 'Informasi berkala adalah informasi yang diperbaharui kemudian disediakan dandiumumkan kepada publik secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali.',
-            link: 'https://ppid.madiunkota.go.id/informasi/informasi-secara-berkala'
+            link: 'https://ppid.Probolinggokota.go.id/informasi/informasi-secara-berkala'
         },
         {
             image: '4.jpg',
             title: 'Informasi Serta Merta',
             desc: 'Informasi serta merta harus diumumkan kepada publik. Hal ini bertujuan agar masyarakat dapat mengantisipasi keadaan darurat atau bahaya sehingga dapat meminimalisir akibat/dampak buruk yang ditimbulkan.',
-            link: 'https://ppid.madiunkota.go.id/informasi/informasi-serta-merta'
+            link: 'https://ppid.Probolinggokota.go.id/informasi/informasi-serta-merta'
         },
         {
             image: '5.jpg',
             title: 'Informasi Setiap Saat',
             desc: 'Informasi yang harus disediakan oleh Badan Publik dan siap tersedia untuk bisa langsung diberikan kepada Pemohon Informasi Publik ketika terdapat permohonan terhadap Informasi Publik tersebut.',
-            link: 'https://ppid.madiunkota.go.id/informasi/informasi-setiap-saat'
+            link: 'https://ppid.Probolinggokota.go.id/informasi/informasi-setiap-saat'
         },
         {
             image: '6.png',
             title: 'Informasi Dikecualikan Penetapan dan Proses Uji Konsekuensi',
             desc: 'Informasi yang tidak dapat diakses oleh pemohon informasi publik sebagaimana dimaksud dalam Undang – Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik.',
-            link: 'https://ppid.madiunkota.go.id/informasi/informasi-dikecualikan'
+            link: 'https://ppid.Probolinggokota.go.id/informasi/informasi-dikecualikan'
         },
         
     ]
@@ -71,12 +71,12 @@ export default function ArticleIndex({ latest, session }) {
         },
         {
             title: 'Tata Cara Permohonan',
-            link: '',
+            link: '/layanan/tata-cara-permohonan-informasi',
             icon: <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  className="group-hover:text-blue-900 icon icon-tabler icons-tabler-outline icon-tabler-list-numbers"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 6h9" /><path d="M11 12h9" /><path d="M12 18h8" /><path d="M4 16a2 2 0 1 1 4 0c0 .591 -.5 1 -1 1.5l-3 2.5h4" /><path d="M6 10v-6l-2 2" /></svg>
         },
         {
             title: 'Kanal Pengaduan Resmi Informasi',
-            link: '',
+            link: '/pengaduan-resmi',
             icon: <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  className="group-hover:text-blue-900 icon icon-tabler icons-tabler-filled icon-tabler-shield-half"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.998 2l.032 .002l.086 .005a1 1 0 0 1 .342 .104l.105 .062l.097 .076l.016 .015l.247 .21a11 11 0 0 0 7.189 2.537l.342 -.01a1 1 0 0 1 1.005 .717a13 13 0 0 1 -9.208 16.25a1 1 0 0 1 -.502 0a13 13 0 0 1 -9.209 -16.25a1 1 0 0 1 1.005 -.717a11 11 0 0 0 7.791 -2.75l.046 -.036l.053 -.041a1 1 0 0 1 .217 -.112l.075 -.023l.036 -.01a1 1 0 0 1 .12 -.022l.086 -.005zm.002 2.296l-.176 .135a13 13 0 0 1 -7.288 2.572l-.264 .006l-.064 .31a11 11 0 0 0 1.064 7.175l.17 .314a11 11 0 0 0 6.49 5.136l.068 .019z" /></svg>
         },
         {

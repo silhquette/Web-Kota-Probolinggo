@@ -47,7 +47,6 @@ export default function Guest({ children }) {
                 { label: "Tupoksi", link: "/ppid/tupoksi" },
                 { label: "Struktur Organisasi PPID", link: "/ppid/struktur" },
                 { label: "SK & SOP PPID", link: "/ppid/sk-sop" },
-                { label: "Sekertariat PPID", link: "/ppid/sekertariat" },
                 { label: "Maklumat Pelayanan", link: "/ppid/maklumat" },
                 { label: "PPID Pembantu", link: "/ppid/pembantu" },
             ],
@@ -63,14 +62,14 @@ export default function Guest({ children }) {
                     link: "/layanan/tata-cara-permohonan-informasi",
                 },
                 {   label: "Keberatan Informasi", 
-                    link: "/profile/tata-cara-keberatan-informasi" },
+                    link: "/layanan/tata-cara-keberatan-informasi" },
                 {
                     label: "Sengketa Informasi Publik",
-                    link: "/profile/tata-cara-sengketa-informasi",
+                    link: "/layanan/tata-cara-sengketa-informasi",
                 },
                 {
                     label: "Alasan Pengajuan Keberatan",
-                    link: "/profile/alasan-pengajuan-keberatan",
+                    link: "/layanan/alasan-pengajuan-keberatan",
                 },
             ],
         },
@@ -90,6 +89,35 @@ export default function Guest({ children }) {
                     link: "/layanan/form-permohonan" 
                 },
             ],
+        },
+        {
+            label: "Keberatan Permohonan Informasi",
+            submenu: [
+                {   
+                    label: "Keberatan Informasi Online", 
+                    link: "https://docs.google.com/forms/d/e/1FAIpQLSdwXO3EDV_ZLsZzc6iXBY9kDIpKmiG2SGjnUkBV_0d6nYbrmQ/formResponse" 
+                },
+                {   
+                    label: "Formulir Keberatan Permohonan Informasi", 
+                    link: "/layanan/form-keberatan-permohonan" 
+                },
+            ],
+        },
+        {
+            label: "Jumlah Pembohon Informasi",
+            link: "/layanan/jumlah-pemohon"
+        },
+        {
+            label: "Laporan Tahunan",
+            link: "/layanan/laporan-tahunan"
+        },
+        {
+            label: "Laporan Akuntabilitas Kinerja",
+            link: "/layanan/laporan-akuntabilitas"
+        },
+        {
+            label: "Aspirasi dan Pengaduan",
+            link: "/layanan/aspirasi-pengaduan"
         },
     ];
 

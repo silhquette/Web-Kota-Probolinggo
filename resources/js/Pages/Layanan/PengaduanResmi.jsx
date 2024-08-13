@@ -5,32 +5,38 @@ import { Head, Link, useForm } from "@inertiajs/react";
 //import layout
 import GuestLayout from "../../Layouts/GuestLayout";
 
-export default function PengajuanIndex() {
+export default function PengaduanIndex() {
     const pengaduan = [
         {
-          action: "Menerima pengaduan masyarakat melalui lisan, tulisan, E-mail, faksimili."
+          action: "Call Center 112 (kegawatdaruratan)"
         },
         {
-          action: "Mencatat pengaduan ke dalam register pengaduan."
+          action: "SP4N Lapor! (di-link-kan ke lapor.go.id)"
         },
         {
-          action: "Meneruskan pengaduan masyarakat kepada Kepala Bidang Pelayanan PPID Kota Probolinggo."
+          action: "Laporo Rek! (LPPL Suara Kota Probolinggo 101,7FM)"
         },
         {
-          action: "Meneruskan tentang pengaduan masyarakat/publik tersebut kepada PPID Kota Probolinggo."
+          action: "Media Sosial Pemerintah Kota Probolinggo (FB n IG Pemkot sebutin)"
         },
         {
-          action: "Jika pengaduan kepada OPD lain, maka meneruskan pengaduan tersebut kepada OPD yang dituju."
-        }
+          action: "VIEW Probolinggo"
+        },
+        {
+          action: "email : ppidkotaprob@gmail.com"
+        },
+        {
+          action: "sekretariat PPID Kota Probolinggo - Jalan dr. Moh. Saleh No. 5 Kota Probolinggo"
+        },
     ];
 
     return (
         <GuestLayout>
-            <Head title="Pengajuan Informasi" />
+            <Head title="Kanal Pengaduan Resmi Informasi" />
 
             <div className="flex flex-col gap-4 max-w-[1024px] mx-auto my-8 px-6">
                 <h1 className="text-3xl md:text-5xl font-serif text-center mt-4 font-semibold">
-                    Tata Cara Pengajuan Informasi
+                    Kanal Pengaduan Resmi Informasi
                 </h1>
                 <div className="flex gap-4 w-full justify-center mb-4">
                     <caption className="flex gap-1 items-center">
@@ -54,9 +60,10 @@ export default function PengajuanIndex() {
                         className="flex flex-col gap-2 w-full mx-auto"
                     >
                         <h2 className="text-xl md:text-3xl mt-4 font-semibold">
-                            Tata Cara Pengajuan Informasi
+                            Kanal Pengaduan Resmi Informasi
                         </h2>
                         <hr />
+                        <p>Warga Kota Probolinggo dapat menyampaikan pengaduan kepada Pemerintah Kota Probolinggo melalui salah satu kanal berikut :</p>
                         <ol className="list-decimal mx-4">
                             {pengaduan.map((item, index) => (
                                 <li key={index}>
@@ -64,7 +71,6 @@ export default function PengajuanIndex() {
                                     
                                 </li>
                             ))}
-                            <li>Pengaduan juga dapat dilaporkan di <a className="font-semibold after:content-['↗'] hover:text-blue-700" href="https://handal.lapor.go.id/">lapor SP4N</a> dan <a className="font-semibold after:content-['↗'] hover:text-blue-700" href="https://ppid.probolinggokota.go.id/wp-content/uploads/2021/09/STANDAR-OPERASIONAL-PROSEDUR-SOP-View-Probolinggo.pdf">View Probolinggo</a></li>
                         </ol>
                     </div>
 

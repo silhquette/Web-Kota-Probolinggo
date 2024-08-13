@@ -5,32 +5,37 @@ import { Head, Link, useForm } from "@inertiajs/react";
 //import layout
 import GuestLayout from "../../Layouts/GuestLayout";
 
-export default function PengajuanIndex() {
-    const pengaduan = [
+export default function LaporanIndex() {
+    const laporan = [
         {
-          action: "Menerima pengaduan masyarakat melalui lisan, tulisan, E-mail, faksimili."
+          action: "Laporan Tahunan PPID Kota Probolinggo Tahun 2023",
+          link: "https://ppid.probolinggokota.go.id/wp-content/uploads/2024/05/LLID-PPID-UTAMA-2024.pdf"
         },
         {
-          action: "Mencatat pengaduan ke dalam register pengaduan."
+          action: "Laporan Tahunan PPID Kota Probolinggo Tahun 2022",
+          link: "https://ppid.probolinggokota.go.id/wp-content/uploads/2023/03/LLID-PPID-UTAMA-2022.pdf"
         },
         {
-          action: "Meneruskan pengaduan masyarakat kepada Kepala Bidang Pelayanan PPID Kota Probolinggo."
+          action: "Laporan Tahunan PPID Kota Probolinggo Tahun 2021",
+          link: "https://ppid.probolinggokota.go.id/wp-content/uploads/2023/03/LLID-PPID-UTAMA-2021.pdf"
         },
         {
-          action: "Meneruskan tentang pengaduan masyarakat/publik tersebut kepada PPID Kota Probolinggo."
+          action: "Laporan Tahunan PPID Kota Probolinggo Tahun 2020",
+          link: "https://ppid.probolinggokota.go.id/wp-content/uploads/2021/09/Daftar-Pemohon-Informasi-Publik-2020-1.pdf"
         },
         {
-          action: "Jika pengaduan kepada OPD lain, maka meneruskan pengaduan tersebut kepada OPD yang dituju."
-        }
+          action: "Laporan Tahunan PPID Kota Probolinggo Tahun 2019",
+          link: "https://drive.google.com/file/d/1Ukruv6cYFgK3ENsvMZdxaqyCe9Xc0IiX/view?usp=sharing"
+        },
     ];
 
     return (
         <GuestLayout>
-            <Head title="Pengajuan Informasi" />
+            <Head title="Laporan Tahunan" />
 
             <div className="flex flex-col gap-4 max-w-[1024px] mx-auto my-8 px-6">
                 <h1 className="text-3xl md:text-5xl font-serif text-center mt-4 font-semibold">
-                    Tata Cara Pengajuan Informasi
+                    Laporan Tahunan PPID Kota Probolinggo
                 </h1>
                 <div className="flex gap-4 w-full justify-center mb-4">
                     <caption className="flex gap-1 items-center">
@@ -54,17 +59,18 @@ export default function PengajuanIndex() {
                         className="flex flex-col gap-2 w-full mx-auto"
                     >
                         <h2 className="text-xl md:text-3xl mt-4 font-semibold">
-                            Tata Cara Pengajuan Informasi
+                            Daftar Laporan Tahunan PPID
                         </h2>
                         <hr />
                         <ol className="list-decimal mx-4">
-                            {pengaduan.map((item, index) => (
+                            {laporan.map((item, index) => (
                                 <li key={index}>
+                                    <Link href={item.link} className="hover:text-blue-700 after:content-['_↗']">
                                         <span>{item.action}</span>
+                                    </Link>
                                     
                                 </li>
                             ))}
-                            <li>Pengaduan juga dapat dilaporkan di <a className="font-semibold after:content-['↗'] hover:text-blue-700" href="https://handal.lapor.go.id/">lapor SP4N</a> dan <a className="font-semibold after:content-['↗'] hover:text-blue-700" href="https://ppid.probolinggokota.go.id/wp-content/uploads/2021/09/STANDAR-OPERASIONAL-PROSEDUR-SOP-View-Probolinggo.pdf">View Probolinggo</a></li>
                         </ol>
                     </div>
 
