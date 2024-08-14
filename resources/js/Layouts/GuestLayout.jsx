@@ -25,7 +25,7 @@ export default function Guest({ children }) {
                     label: "Gambaran Umum Kota probolinggo",
                     link: "/profile/gambaran-umum",
                 },
-                { label: "Daftar Nama Pejabat", link: "" },
+                { label: "Daftar Nama Pejabat", link: "/profile/pejabat" },
                 { label: "Walikota Probolinggo", link: "" },
                 {
                     label: "Tupoksi Pemerintah Kota",

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Award;
+use App\Models\Officer;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -61,5 +62,21 @@ class AboutController extends Controller
 
     public function maklumatPPID() {
         return inertia('About/PPID/Maklumat');
+    }
+
+    public function pembantu() {
+        $officers = Officer::all();
+
+        return inertia('About/PPID/Pembantu', [
+            'officers' => $officers
+        ]);
+    }
+
+    public function pejabat() {
+        $officers = Officer::all();
+
+        return inertia('About/Probolinggo/Pejabat', [
+            'officers' => $officers
+        ]);
     }
 }

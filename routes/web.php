@@ -61,6 +61,7 @@ Route::prefix('/profile')->group(function () {
     Route::get('/struktur-pemerintahan', [AboutController::class, 'struktur'])->name('profile.struktur');
     Route::get('/lhkpn', [AboutController::class, 'lhkpn'])->name('profile.lhkpn');
     Route::get('/penghargaan', [AboutController::class, 'penghargaan'])->name('profile.penghargaan');
+    Route::get('/pejabat', [AboutController::class, 'pejabat'])->name('ppid.pejabat');
 });
 
 Route::prefix('/ppid')->group(function () {
@@ -69,6 +70,7 @@ Route::prefix('/ppid')->group(function () {
     Route::get('/struktur', [AboutController::class, 'strukturPPID'])->name('ppid.struktur');
     Route::get('/sk-sop', [AboutController::class, 'suratKeterangan'])->name('ppid.suratKeterangan');
     Route::get('/maklumat', [AboutController::class, 'maklumatPPID'])->name('ppid.maklumat');
+    Route::get('/pembantu', [AboutController::class, 'pembantu'])->name('ppid.pembantu');
 });
 
 Route::prefix('/layanan')->group(function () {
