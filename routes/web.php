@@ -9,6 +9,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicServiceController;
 use App\Http\Controllers\StatisticController;
+use App\Http\Controllers\TransparencyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,7 @@ Route::prefix('/ppid')->group(function () {
 });
 
 Route::prefix('/layanan')->group(function () {
+    Route::get('/alur-tatacara', [PublicServiceController::class, 'tataCara'])->name('layanan.tatacara');
     Route::get('/form-permohonan', [PublicServiceController::class, 'formPermohonan'])->name('layanan.form');
     Route::get('/tata-cara-pengajuan', [PublicServiceController::class, 'caraPengajuan'])->name('layanan.pengajuan');
     Route::get('/tata-cara-permohonan-informasi', [PublicServiceController::class, 'permohonanInformasi'])->name('layanan.permohonan');
@@ -81,6 +83,19 @@ Route::prefix('/layanan')->group(function () {
     Route::get('/laporan-tahunan', [PublicServiceController::class, 'laporanTahunan'])->name('layanan.tahunan');
     Route::get('/laporan-akuntabilitas', [PublicServiceController::class, 'laporanAkuntabilitas'])->name('layanan.akuntabilitas');
     Route::get('/aspirasi-pengaduan', [PublicServiceController::class, 'aspirasi'])->name('layanan.aspirasi');
+});
+
+Route::prefix('/transparansi')->group(function () {
+    Route::get('/', [TransparencyController::class, 'index'])->name('transparansi.index');
+    Route::get('/aset-investasi', [TransparencyController::class, 'aset'])->name('transparansi.aset');
+    Route::get('/neraca', [TransparencyController::class, 'neraca'])->name('transparansi.neraca');
+    Route::get('/calk', [TransparencyController::class, 'calk'])->name('transparansi.calk');
+    Route::get('/lra', [TransparencyController::class, 'lra'])->name('transparansi.lra');
+    Route::get('/rkpd', [TransparencyController::class, 'rkpd'])->name('transparansi.rkpd');
+    Route::get('/kua-ppas', [TransparencyController::class, 'ppas'])->name('transparansi.ppas');
+    Route::get('/dpa', [TransparencyController::class, 'dpa'])->name('transparansi.dpa');
+    Route::get('/rka', [TransparencyController::class, 'rka'])->name('transparansi.rka');
+    Route::get('/opini-bpk', [TransparencyController::class, 'obpk'])->name('transparansi.obpk');
 });
 
 require __DIR__.'/auth.php';

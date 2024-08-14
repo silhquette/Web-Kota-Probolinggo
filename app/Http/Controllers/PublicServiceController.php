@@ -7,6 +7,11 @@ use Inertia\Inertia;
 
 class PublicServiceController extends Controller
 {
+    public function tataCara() 
+    {
+        return Inertia('Layanan/TataCaraPermohonan');
+    }
+
     public function formPermohonan() 
     {
         return Inertia('Layanan/FormPermohonanInformasi');

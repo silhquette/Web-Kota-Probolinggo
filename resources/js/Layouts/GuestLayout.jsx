@@ -54,42 +54,42 @@ export default function Guest({ children }) {
     ];
 
     const publicServices = [
-        {
-            label: "Alur dan Tata Cara",
-            submenu: [
-                {
-                    label: "Permohonan Informasi",
-                    link: "/layanan/tata-cara-permohonan-informasi",
-                },
-                {   label: "Keberatan Informasi", 
-                    link: "/layanan/tata-cara-keberatan-informasi" },
-                {
-                    label: "Sengketa Informasi Publik",
-                    link: "/layanan/tata-cara-sengketa-informasi",
-                },
-                {
-                    label: "Alasan Pengajuan Keberatan",
-                    link: "/layanan/alasan-pengajuan-keberatan",
-                },
-            ],
-        },
+        // {
+        //     label: "Alur dan Tata Cara",
+        //     submenu: [
+        //         {
+        //             label: "Permohonan Informasi",
+        //             link: "/layanan/tata-cara-permohonan-informasi",
+        //         },
+        //         {   label: "Keberatan Informasi", 
+        //             link: "/layanan/tata-cara-keberatan-informasi" },
+        //         {
+        //             label: "Sengketa Informasi Publik",
+        //             link: "/layanan/tata-cara-sengketa-informasi",
+        //         },
+        //         {
+        //             label: "Alasan Pengajuan Keberatan",
+        //             link: "/layanan/alasan-pengajuan-keberatan",
+        //         },
+        //     ],
+        // },
         {
             label: "Tata Cara Pengajuan",
             link: "/layanan/tata-cara-pengajuan"
         },
-        {
-            label: "Permohonan Informasi",
-            submenu: [
-                {   
-                    label: "Permohonan Informasi Online", 
-                    link: "https://docs.google.com/forms/d/e/1FAIpQLSdbokgEv4HFV1CD7LZcAbDfoxY5a3cSHRnWWv-ylaSWY9pSOg/viewform" 
-                },
-                {   
-                    label: "Formulir Permohonan Informasi", 
-                    link: "/layanan/form-permohonan" 
-                },
-            ],
-        },
+        // {
+        //     label: "Permohonan Informasi",
+        //     submenu: [
+        //         {   
+        //             label: "Permohonan Informasi Online", 
+        //             link: "https://docs.google.com/forms/d/e/1FAIpQLSdbokgEv4HFV1CD7LZcAbDfoxY5a3cSHRnWWv-ylaSWY9pSOg/viewform" 
+        //         },
+        //         {   
+        //             label: "Formulir Permohonan Informasi", 
+        //             link: "/layanan/form-permohonan" 
+        //         },
+        //     ],
+        // },
         {
             label: "Keberatan Permohonan Informasi",
             submenu: [
@@ -145,7 +145,7 @@ export default function Guest({ children }) {
                     <div className="flex gap-12 w-full">
                         <NavLink
                             href={route("landing")}
-                            active={route().current("landing")}
+                            active={route().current("landing")  || route().current("transparansi*")}
                         >
                             Beranda
                         </NavLink>

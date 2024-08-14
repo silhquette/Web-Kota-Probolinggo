@@ -31,7 +31,7 @@ export default function ArticleIndex({ latest, session }) {
 
     const informations = [
         {
-            image: '2.jpg',
+            image: '2.jpg', 
             title: 'Daftar Informasi Publik',
             desc: 'Daftar Informasi Publik Pemerintah Kota Probolinggo sesuai dengan PERKI Nomor 1 Tahun 2021 tentang Standar Layanan Informasi Publik.',
             link: 'https://ppid.Probolinggokota.go.id/daftar/informasipublik'
@@ -66,12 +66,12 @@ export default function ArticleIndex({ latest, session }) {
     const services = [
         {
             title: 'Form Permohonan Informasi',
-            link: '/layanan/form-permohonan',
+            link: 'https://docs.google.com/forms/d/e/1FAIpQLSdbokgEv4HFV1CD7LZcAbDfoxY5a3cSHRnWWv-ylaSWY9pSOg/viewform',
             icon: <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  className="group-hover:text-blue-900 icon icon-tabler icons-tabler-outline icon-tabler-list-details"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 5h8" /><path d="M13 9h5" /><path d="M13 15h8" /><path d="M13 19h5" /><path d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /></svg>
         },
         {
             title: 'Tata Cara Permohonan',
-            link: '/layanan/tata-cara-permohonan-informasi',
+            link: '/layanan/alur-tatacara',
             icon: <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  className="group-hover:text-blue-900 icon icon-tabler icons-tabler-outline icon-tabler-list-numbers"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 6h9" /><path d="M11 12h9" /><path d="M12 18h8" /><path d="M4 16a2 2 0 1 1 4 0c0 .591 -.5 1 -1 1.5l-3 2.5h4" /><path d="M6 10v-6l-2 2" /></svg>
         },
         {
@@ -81,7 +81,7 @@ export default function ArticleIndex({ latest, session }) {
         },
         {
             title: 'Transparansi Anggaran',
-            link: '',
+            link: '/transparansi',
             icon: <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  className="group-hover:text-blue-900 icon icon-tabler icons-tabler-outline icon-tabler-coins"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14c0 1.657 2.686 3 6 3s6 -1.343 6 -3s-2.686 -3 -6 -3s-6 1.343 -6 3z" /><path d="M9 14v4c0 1.656 2.686 3 6 3s6 -1.344 6 -3v-4" /><path d="M3 6c0 1.072 1.144 2.062 3 2.598s4.144 .536 6 0c1.856 -.536 3 -1.526 3 -2.598c0 -1.072 -1.144 -2.062 -3 -2.598s-4.144 -.536 -6 0c-1.856 .536 -3 1.526 -3 2.598z" /><path d="M3 6v10c0 .888 .772 1.45 2 2" /><path d="M3 11c0 .888 .772 1.45 2 2" /></svg>
         },
     ]
@@ -104,7 +104,7 @@ export default function ArticleIndex({ latest, session }) {
                     {services.map((service) => (
                         <div className="basis-1/4 flex gap-2 items-center justify-center rounded-xl p-4 border hover:border-blue-700 group transition-all">
                             <div className="p-2 rounded-full bg-gray-100 group-hover:bg-blue-100 transition-all">{service.icon}</div>
-                            <Link href={service.link}>{service.title}</Link>
+                            <a href={service.link}>{service.title}</a>
                         </div>
                     ))}
                 </div>

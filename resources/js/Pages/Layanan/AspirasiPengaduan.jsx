@@ -57,7 +57,7 @@ export default function AspirasiIndex() {
                             <path d="M7 11l5 5l5 -5" />
                             <path d="M12 4l0 12" />
                         </svg>
-                        <p>Unduh Formulir Permohonan Informasi</p>
+                        <p>Unduh Formulir Keberatan Permohonan Informasi</p>
                     </a>
                 </div>
                 <iframe
