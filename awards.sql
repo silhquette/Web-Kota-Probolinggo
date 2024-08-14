@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2024 at 06:18 PM
+-- Generation Time: Aug 14, 2024 at 03:55 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -27,11 +27,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `awards`
 --
 
--- CREATE TABLE `awards` (
---   `id` bigint(20) UNSIGNED NOT NULL,
---   `title` mediumtext NOT NULL,
---   `year` varchar(255) NOT NULL
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `awards` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` mediumtext NOT NULL,
+  `year` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `awards`
@@ -203,8 +203,8 @@ INSERT INTO `awards` (`id`, `title`, `year`) VALUES
 --
 -- Indexes for table `awards`
 --
--- ALTER TABLE `awards`
---   ADD PRIMARY KEY (`id`);
+ALTER TABLE `awards`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -213,9 +213,9 @@ INSERT INTO `awards` (`id`, `title`, `year`) VALUES
 --
 -- AUTO_INCREMENT for table `awards`
 --
--- ALTER TABLE `awards`
---   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
--- COMMIT;
+ALTER TABLE `awards`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

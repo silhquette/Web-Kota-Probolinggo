@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicInformationController;
 use App\Http\Controllers\PublicServiceController;
 use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\TransparencyController;
@@ -96,6 +97,14 @@ Route::prefix('/transparansi')->group(function () {
     Route::get('/dpa', [TransparencyController::class, 'dpa'])->name('transparansi.dpa');
     Route::get('/rka', [TransparencyController::class, 'rka'])->name('transparansi.rka');
     Route::get('/opini-bpk', [TransparencyController::class, 'obpk'])->name('transparansi.obpk');
+});
+
+Route::prefix('/informasi')->group(function () {
+    Route::get('/', [PublicInformationController::class, 'publik'])->name('informasi.publik');
+    Route::get('/informasi-secara-berkala', [PublicInformationController::class, 'berkala'])->name('informasi.berkala');
+    Route::get('/informasi-serta-merta', [PublicInformationController::class, 'serta'])->name('informasi.serta');
+    Route::get('/informasi-setiap-saat', [PublicInformationController::class, 'setiapSaat'])->name('informasi.setiapSaat');
+    Route::get('/informasi-dikecualikan', [PublicInformationController::class, 'kecuali'])->name('informasi.kecuali');
 });
 
 require __DIR__.'/auth.php';

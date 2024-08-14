@@ -34,31 +34,31 @@ export default function ArticleIndex({ latest, session }) {
             image: '2.jpg', 
             title: 'Daftar Informasi Publik',
             desc: 'Daftar Informasi Publik Pemerintah Kota Probolinggo sesuai dengan PERKI Nomor 1 Tahun 2021 tentang Standar Layanan Informasi Publik.',
-            link: 'https://ppid.Probolinggokota.go.id/daftar/informasipublik'
+            link: '/informasi'
         },
         {
             image: '3.jpg',
             title: 'Informasi Berkala',
             desc: 'Informasi berkala adalah informasi yang diperbaharui kemudian disediakan dandiumumkan kepada publik secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali.',
-            link: 'https://ppid.Probolinggokota.go.id/informasi/informasi-secara-berkala'
+            link: '/informasi/informasi-secara-berkala'
         },
         {
             image: '4.jpg',
             title: 'Informasi Serta Merta',
             desc: 'Informasi serta merta harus diumumkan kepada publik. Hal ini bertujuan agar masyarakat dapat mengantisipasi keadaan darurat atau bahaya sehingga dapat meminimalisir akibat/dampak buruk yang ditimbulkan.',
-            link: 'https://ppid.Probolinggokota.go.id/informasi/informasi-serta-merta'
+            link: '/informasi/informasi-serta-merta'
         },
         {
             image: '5.jpg',
             title: 'Informasi Setiap Saat',
             desc: 'Informasi yang harus disediakan oleh Badan Publik dan siap tersedia untuk bisa langsung diberikan kepada Pemohon Informasi Publik ketika terdapat permohonan terhadap Informasi Publik tersebut.',
-            link: 'https://ppid.Probolinggokota.go.id/informasi/informasi-setiap-saat'
+            link: '/informasi/informasi-setiap-saat'
         },
         {
             image: '6.png',
             title: 'Informasi Dikecualikan Penetapan dan Proses Uji Konsekuensi',
             desc: 'Informasi yang tidak dapat diakses oleh pemohon informasi publik sebagaimana dimaksud dalam Undang – Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik.',
-            link: 'https://ppid.Probolinggokota.go.id/informasi/informasi-dikecualikan'
+            link: '/informasi/informasi-dikecualikan'
         },
         
     ]
