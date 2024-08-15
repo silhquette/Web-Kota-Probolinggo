@@ -43,7 +43,10 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return inertia('Articles/Create');
+        $categories = Category::all();
+        return inertia('Articles/Create', [
+            'categories' => $categories
+        ]);
     }
 
     /**

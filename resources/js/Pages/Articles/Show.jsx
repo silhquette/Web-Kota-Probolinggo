@@ -14,7 +14,24 @@ import ArticleCard from "@/Components/ArticleCard";
 import { format, parseISO } from "date-fns";
 import { id } from "date-fns/locale";
 
+import './../../../css/custom-styles.css'
+
 export default function ArticleIndex({ article, categories, latest, session }) {
+    const transformHtml = (html) => {
+        // Menambahkan kelas kustom pada elemen HTML
+        return html
+            .replace(/<h1>/g, '<h1 class="custom-h1">')
+            .replace(/<h2>/g, '<h2 class="custom-h2">')
+            .replace(/<h3>/g, '<h3 class="custom-h3">')
+            .replace(/<p>/g, '<p class="custom-p">')
+            .replace(/<a /g, '<a class="custom-a "')
+            .replace(/<ul>/g, '<ul class="custom-ul">')
+            .replace(/<ol>/g, '<ol class="custom-ol">')
+            .replace(/<blockquote>/g, '<blockquote class="custom-blockquote">')
+            .replace(/<img /g, '<img class="custom-img "')
+            .replace(/<table>/g, '<table class="custom-table">');
+    };
+
     return (
         <GuestLayout>
             <Head title="Berita" />
@@ -97,15 +114,9 @@ export default function ArticleIndex({ article, categories, latest, session }) {
                         </p>
                     </div>
                     <hr />
-                    <p>
-                        {article.body}
-                    </p>
-                    <p>
-                        {article.body}
-                    </p>
-                    <p>
-                        {article.body}
-                    </p>
+
+                    {/* Body */}
+                    <div dangerouslySetInnerHTML={{ __html: transformHtml(article.body) }} className="custom-prose"></div>
                 </article>
 
                 <aside className="flex flex-col gap-8 mt-8 md:mt-0">
