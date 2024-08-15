@@ -15,6 +15,7 @@ export default function Article({ articles, session, auth }) {
     //method deletePost
     const deletePost = async (id) => {
         Inertia.delete(`/article/${id}`);
+        location.reload();
     }
 
     return (
