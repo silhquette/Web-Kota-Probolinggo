@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
 
@@ -14,19 +15,27 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        // get all articles
-        $latest = Article::with(['category', 'user'])->latest()->limit(4)->get();
-        $categories = Category::with(['articles' => function ($query) {
-            $query->with(['category', 'user'])->orderBy('created_at', 'desc');
-        }])->get();
-
+        
         // dump($categories);
-
+        
         // return view
-        return inertia('Articles/Index', [
-            'latest' => $latest,
-            'categories' => $categories
-        ]);
+        if (Auth::user()) {
+            // get all articles
+            $articles = Auth::user()->articles->load(['category', 'user']);
+            return inertia('Articles/User/Index', [
+                'articles' => $articles,
+            ]);
+        } else {
+            // get all articles
+            $latest = Article::with(['category', 'user'])->latest()->limit(4)->get();
+            $categories = Category::with(['articles' => function ($query) {
+                $query->with(['category', 'user'])->orderBy('created_at', 'desc');
+            }])->get();
+            return inertia('Articles/Index', [
+                'latest' => $latest,
+                'categories' => $categories
+            ]);
+        }
     }
 
     /**
@@ -91,6 +100,10 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+         //delete article
+         $article->delete();
+
+         //redirect
+         return redirect()->route('article.index')->with('success', 'Data Berhasil Dihapus!');
     }
 }

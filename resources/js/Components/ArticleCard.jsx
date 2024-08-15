@@ -4,6 +4,8 @@ import moment from 'moment';
 //import link
 import { Link } from '@inertiajs/react';
 
+import PrimaryLink from './PrimaryLink';
+
 export default function ArticleCard({
     article,
     index = 0,
@@ -11,6 +13,7 @@ export default function ArticleCard({
     excerpt = true,
     category = true,
     className = '',
+    editable = false
 }) {
     const formatter = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
 
