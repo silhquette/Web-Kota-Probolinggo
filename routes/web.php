@@ -61,7 +61,8 @@ Route::prefix('/profile')->group(function () {
     Route::get('/struktur-pemerintahan', [AboutController::class, 'struktur'])->name('profile.struktur');
     Route::get('/lhkpn', [AboutController::class, 'lhkpn'])->name('profile.lhkpn');
     Route::get('/penghargaan', [AboutController::class, 'penghargaan'])->name('profile.penghargaan');
-    Route::get('/pejabat', [AboutController::class, 'pejabat'])->name('ppid.pejabat');
+    Route::get('/pejabat', [AboutController::class, 'pejabat'])->name('profile.pejabat');
+    Route::get('/walikota-probolinggo', [AboutController::class, 'walikota'])->name('profile.walikota');
 });
 
 Route::prefix('/ppid')->group(function () {

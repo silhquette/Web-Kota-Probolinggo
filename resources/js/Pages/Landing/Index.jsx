@@ -236,6 +236,26 @@ export default function ArticleIndex({ latest, session }) {
                         </SplideSlide>
                     ))}
                 </Splide>
+
+                <div>
+                    <h1 className="text-3xl md:text-5xl font-serif text-center mt-4 font-semibold">
+                        Link Terkait
+                    </h1>
+                    <h3 className="text-center text-gray-600 mt-2">
+                        Kunjungi juga halaman terkait untuk mendapatkan informasi terbaru dan terlengkap.
+                    </h3>
+                </div>
+                <div className="max-w-full md:max-w-[1024px] mx-auto flex flex-col md:flex-row gap-12 items-stretch justify-center">
+                    <div className="basis-2/3 group">
+                        <a href="/" className="p-4 border shadow rounded-xl inline-block w-full overflow-hidden"><img src="/assets/images/logo-probolinggo.png" className="w-full group-hover:scale-[1.02] transition-all" alt="" /></a>
+                        <h3 className="text-lg font-serif text-amber-500 text-center">Website Resmi Pemerintah Kota Probolinggo</h3>
+                    </div>
+                    <div className="basis-1/3 group">
+                        <a href="/" className="p-4 border shadow rounded-xl inline-block w-full overflow-hidden"><img src="/assets/images/logo-span.png" className="w-full group-hover:scale-[1.05] transition-all" alt="" /></a>
+                        <h3 className="text-lg font-serif text-amber-500 text-center">Website Resmi Sp4n-Lapor!</h3>
+                    </div>
+                    {/* <a href="/" className="basis-1/3 p-4 border shadow rounded-xl"><img src="/assets/images/logo-span.png" className="w-full" alt="" /></a> */}
+                </div>
             </div>
         </GuestLayout>
     );

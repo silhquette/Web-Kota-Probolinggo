@@ -62,6 +62,7 @@ export default function InformationIndex({ informations }) {
                                                 <td className="py-2 px-4">{item.summary}</td>
                                                 <td className="py-2 px-4">{item.format}</td>
                                                 <td className="py-2 px-4">{item.announced}</td>
+                                                <td className="py-2 px-4">{item.period}</td>
                                                 <td className="py-2 px-4 w-28"><a href={item.link} className="text-blue-700 after:content-['_↗']">Kunjungi</a></td>
                                             </tr>
                                         ))}

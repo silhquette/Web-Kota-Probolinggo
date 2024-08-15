@@ -32,6 +32,10 @@ class AboutController extends Controller
         return inertia('About/Probolinggo/Maskot');
     }
 
+    public function walikota() {
+        return inertia('About/Probolinggo/Walikota');
+    }
+
     public function struktur() {
         return inertia('About/Probolinggo/Struktur');
     }
