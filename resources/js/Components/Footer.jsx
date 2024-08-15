@@ -1,80 +1,111 @@
 import { Link } from "@inertiajs/react";
 
 export default function Footer() {
-    
-
     const menuItemsLeft = [
         {
             title: "Badan Perencanaan Pembangunan Daerah dan Penelitian Pengembangan",
-            link: "",
+            link: "http://bappedalitbang.probolinggokota.go.id/",
         },
-        { title: "Badan Kepegawaian dan Pengembangan SDM", link: "" },
-        { title: "Badan Penanggulangan Bencana Daerah", link: "" },
-        { title: "Badan Kesatuan Bangsa dan Politik", link: "" },
+        {
+            title: "Badan Kepegawaian dan Pengembangan SDM",
+            link: "http://bkpsdm.probolinggokota.go.id/",
+        },
+        {
+            title: "Badan Penanggulangan Bencana Daerah",
+            link: "http://bpbd.probolinggokota.go.id/",
+        },
+        {
+            title: "Badan Kesatuan Bangsa dan Politik",
+            link: "https://bakesbangpol.probolinggokota.go.id/",
+        },
         {
             title: "Badan Pendapatan, Pengelolaan Keuangan dan Aset Daerah",
-            link: "",
+            link: "http://bppkad.probolinggokota.go.id/",
         },
-        { title: "Dinas Ketahanan Pangan, Pertanian dan Perikanan", link: "" },
+        {
+            title: "Dinas Ketahanan Pangan, Pertanian dan Perikanan",
+            link: "https://dpkpp.probolinggokota.go.id/",
+        },
         {
             title: "Dinas Kesehatan, Pengendalian Penduduk dan Keluarga Berencana",
-            link: "",
+            link: "http://dinkesp2kb.probolinggokota.go.id/",
         },
-        { title: "Dinas Kepemudaan, Olahraga dan Pariwisata", link: "" },
-        { title: "Dinas Perhubungan", link: "" },
-        { title: "Dinas Komunikasi dan Informatika", link: "" },
-        { title: "Dinas Lingkungan Hidup", link: "" },
+        {
+            title: "Dinas Kepemudaan, Olahraga dan Pariwisata",
+            link: "https://dispopar.probolinggokota.go.id/",
+        },
+        {
+            title: "Dinas Perhubungan",
+            link: "http://dishub.probolinggokota.go.id/",
+        },
+        {
+            title: "Dinas Komunikasi dan Informatika",
+            link: "https://diskominfo.probolinggokota.go.id/",
+        },
+        {
+            title: "Dinas Lingkungan Hidup",
+            link: "http://dlh.probolinggokota.go.id/",
+        },
         {
             title: "Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu",
-            link: "",
+            link: "https://dpmptsp.probolinggokota.go.id/",
         },
-        { title: "Dinas Perpustakaan dan Kearsipan", link: "" },
+        {
+            title: "Dinas Perpustakaan dan Kearsipan",
+            link: "http://perpus-arsip.probolinggokota.go.id/",
+        },
         {
             title: "Dinas Koperasi, Usaha Kecil dan Menengah dan Perdagangan",
-            link: "",
+            link: "http://dkump.probolinggokota.go.id/",
         },
-        { title: "Dinas Perindustrian dan Tenaga Kerja", link: "" },
+        {
+            title: "Dinas Perindustrian dan Tenaga Kerja",
+            link: "https://disperinaker.probolinggokota.go.id/",
+        },
         {
             title: "Dinas Sosial, Pemberdayaan Perempuan dan Perlindungan Anak",
-            link: "",
+            link: "https://dinsospppa.probolinggokota.go.id/",
         },
-        { title: "Dinas Pendidikan dan Kebudayaan", link: "" },
+        {
+            title: "Dinas Pendidikan dan Kebudayaan",
+            link: "https://dikbud.probolinggokota.go.id/",
+        },
         {
             title: "Dinas Pekerjaan Umum, Penataan Ruang, Perumahan dan Kawasan Permukiman",
-            link: "",
+            link: "https://dpuprpkp.probolinggokota.go.id/",
         },
     ];
 
     const menuItemsMid = [
         {
-          title: "Sekretariat Daerah Kota Probolinggo",
-          link: "",
-          children: [
-            { title: "Bagian Pengadaan Barang dan Jasa", link: "" },
-            { title: "Bagian Perekonomian dan Pembangunan", link: "" },
-            { title: "Bagian Hukum", link: "" },
-            { title: "Bagian Kesejahteraan Rakyat", link: "" },
-            { title: "Bagian Organisasi", link: "" },
-            { title: "Bagian Pemerintahan", link: "" },
-            { title: "Bagian Umum", link: "" },
-            { title: "Bagian Keuangan dan Sarana Prasarana", link: "" }
-          ]
+            title: "Sekretariat Daerah Kota Probolinggo",
+            link: "https://setda.probolinggokota.go.id/",
+            children: [
+                { title: "Bagian Pengadaan Barang dan Jasa", link: "http://bag-pbj.probolinggokota.go.id/" },
+                { title: "Bagian Perekonomian dan Pembangunan", link: "https://bag-ekbang.probolinggokota.go.id/" },
+                { title: "Bagian Hukum", link: "https://bag-hukum.probolinggokota.go.id/" },
+                { title: "Bagian Kesejahteraan Rakyat", link: "http://bag-kesra.probolinggokota.go.id/" },
+                { title: "Bagian Organisasi", link: "https://bag-organisasi.probolinggokota.go.id/" },
+                { title: "Bagian Pemerintahan", link: "http://bag-pemerintahan.probolinggokota.go.id/" },
+                { title: "Bagian Umum", link: "https://bag-umum.probolinggokota.go.id/" },
+                { title: "Bagian Keuangan dan Sarana Prasarana", link: "https://bag-keusarpras.probolinggokota.go.id/" }
+            ]
         },
-        { title: "Inspektorat", link: "" },
-        { title: "Kantor Satpol. PP", link: "" },
-        { title: "RSUD Dr. Moch. Saleh", link: "" },
-        { title: "RSUD Ar Rozy", link: "" },
-        { title: "Sekretariat Dewan", link: "" },
-        { title: "Sekretariat KPUD", link: "" },
-    ];
+        { title: "Inspektorat", link: "http://inspektorat.probolinggokota.go.id/", children: [] },
+        { title: "Kantor Satpol. PP", link: "http://satpolpp.probolinggokota.go.id/", children: [] },
+        { title: "RSUD Dr. Moch. Saleh", link: "http://rsud.probolinggokota.go.id/en/", children: [] },
+        { title: "RSUD Ar Rozy", link: "https://rsud-arrozy.probolinggokota.go.id/", children: [] },
+        { title: "Sekretariat Dewan", link: "https://setwan.probolinggokota.go.id/", children: [] },
+        { title: "Sekretariat KPUD", link: "https://kota-probolinggo.kpu.go.id/", children: [] }
+    ];    
 
     const menuItemsKecamatan = [
-        { title: "Kecamatan Mayangan", link: "" },
-        { title: "Kecamatan Kedopok", link: "" },
-        { title: "Kecamatan Wonoasih", link: "" },
-        { title: "Kecamatan Kanigaran", link: "" },
-        { title: "Kecamatan Kademangan", link: "" }
-    ];
+        { title: "Kecamatan Mayangan", link: "https://kec-mayangan.probolinggokota.go.id/" },
+        { title: "Kecamatan Kedopok", link: "http://kec-kedopok.probolinggokota.go.id" },
+        { title: "Kecamatan Wonoasih", link: "http://kec-wonoasih.probolinggokota.go.id/" },
+        { title: "Kecamatan Kanigaran", link: "http://kec-kanigaran.probolinggokota.go.id/" },
+        { title: "Kecamatan Kademangan", link: "http://kec-kademangan.probolinggokota.go.id/" }
+    ];    
 
     return (
         <>
@@ -107,12 +138,12 @@ export default function Footer() {
                                         <path d="M7 7l5 5l-5 5" />
                                         <path d="M13 7l5 5l-5 5" />
                                     </svg>
-                                    <Link
+                                    <a
                                         className="hover:text-amber-500"
                                         href={item.link}
                                     >
                                         {item.title}
-                                    </Link>
+                                    </a>
                                 </div>
                             ))}
                         </div>
@@ -123,34 +154,66 @@ export default function Footer() {
                         </h2>
                         <div>
                             {menuItemsMid.map((item, index) => (
-                                <div key={index} className="flex gap-2">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-right text-amber-500 min-w-[16px] mt-1"
-                                    >
-                                        <path
-                                            stroke="none"
-                                            d="M0 0h24v24H0z"
+                                <>
+                                    <div key={index} className="flex gap-2">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
                                             fill="none"
-                                        />
-                                        <path d="M7 7l5 5l-5 5" />
-                                        <path d="M13 7l5 5l-5 5" />
-                                    </svg>
-                                    <Link
-                                        className="hover:text-amber-500"
-                                        href={item.link}
-                                    >
-                                        {item.title}
-                                    </Link>
-                                </div>
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-right text-amber-500 min-w-[16px] mt-1"
+                                        >
+                                            <path
+                                                stroke="none"
+                                                d="M0 0h24v24H0z"
+                                                fill="none"
+                                            />
+                                            <path d="M7 7l5 5l-5 5" />
+                                            <path d="M13 7l5 5l-5 5" />
+                                        </svg>
+                                        <a
+                                            className="hover:text-amber-500"
+                                            href={item.link}
+                                        >
+                                            {item.title}
+                                        </a>
+                                    </div>
+                                    {item.children.length > 0 && item.children.map((child, index) => (
+                                        <div key={index} className="flex gap-2 ml-6">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-right text-amber-500 min-w-[16px] mt-1"
+                                        >
+                                            <path
+                                                stroke="none"
+                                                d="M0 0h24v24H0z"
+                                                fill="none"
+                                            />
+                                            <path d="M7 7l5 5l-5 5" />
+                                            <path d="M13 7l5 5l-5 5" />
+                                        </svg>
+                                        <a
+                                            className="hover:text-amber-500"
+                                            href={child.link}
+                                        >
+                                            {child.title}
+                                        </a>
+                                    </div>
+                                    ))}
+                                </>
                             ))}
                         </div>
                         <h2 className="text-xl font-semibold">
@@ -179,12 +242,12 @@ export default function Footer() {
                                         <path d="M7 7l5 5l-5 5" />
                                         <path d="M13 7l5 5l-5 5" />
                                     </svg>
-                                    <Link
+                                    <a
                                         className="hover:text-amber-500"
                                         href={item.link}
                                     >
                                         {item.title}
-                                    </Link>
+                                    </a>
                                 </div>
                             ))}
                         </div>
