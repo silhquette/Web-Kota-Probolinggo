@@ -65,9 +65,9 @@ export default function PemohonIndex() {
                         <ol className="list-decimal mx-4">
                             {pemohon.map((item, index) => (
                                 <li key={index}>
-                                    <Link href={item.link} className="hover:text-blue-700 after:content-['_↗']">
+                                    <a href={item.link} className="hover:text-blue-700 after:content-['_↗']">
                                         <span>{item.action}</span>
-                                    </Link>
+                                    </a>
                                     
                                 </li>
                             ))}
