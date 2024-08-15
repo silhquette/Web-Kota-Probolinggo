@@ -47,7 +47,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('/article', ArticleController::class);
+Route::resource('article', ArticleController::class)
+->middleware('auth')
+    ->except(['index', 'show']);
+
+Route::get('article', [ArticleController::class, 'index'])->name('article.index');
+Route::get('article/{article}', [ArticleController::class, 'show'])->name('article.show');
+
+// Route::resource('/article', ArticleController::class);
 Route::get('/statistic/data-statistik', [StatisticController::class, 'dataStatistik'])->name('statistic.data-statistik');
 Route::get('/statistic/daftar-kota', [StatisticController::class, 'daftarKota'])->name('statistic.daftar-kota');
 

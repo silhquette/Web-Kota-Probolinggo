@@ -37,7 +37,7 @@ export default function ArticleCard({
         <Link href={'/article/' + article.slug} key={index} className={"group transition-all flex flex-col gap-2 " + className}>
             <div className={'overflow-hidden rounded-xl ' + getHeight()}>
                 <img
-                    src="/assets/images/thumbnail.webp"
+                    src={article.header ? `/storage/${article.header}` : "/assets/images/gambaran-umum-1.jpg"}
                     alt="thumbnail"
                     className="h-full w-full object-cover transition-all group-hover:shadow-md group-hover:scale-110 group-hover:shadow-blue-100"
                 />
