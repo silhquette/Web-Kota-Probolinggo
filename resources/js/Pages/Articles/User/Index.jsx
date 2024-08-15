@@ -41,7 +41,7 @@ export default function Article({ articles, session, auth }) {
                                 <div key={index} className='flex flex-col gap-4 items-end border border-transparent hover:border-gray-200 rounded-xl p-4'>
                                     <ArticleCard article={article} ImageHeight='min' editable={true}/>
                                     <div className='flex gap-2 h-full items-end'>
-                                        <PrimaryLink href='google.com' disabled={true}>Edit</PrimaryLink>
+                                        <PrimaryLink href='' disabled={true}>Edit</PrimaryLink>
                                         <DangerButton onClick={() => deletePost(article.slug)} href='google.com'>Delete</DangerButton>
                                     </div>
                                 </div>

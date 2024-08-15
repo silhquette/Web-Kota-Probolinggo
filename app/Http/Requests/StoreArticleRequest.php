@@ -23,10 +23,10 @@ class StoreArticleRequest extends FormRequest
     {
         return [
             'header' => 'extensions:jpg,png',
-            'title' => 'required|min:10',
-            'slug' => 'required|min:10',
-            'excerpt' => 'required|min:10',
-            'body' => 'required|min:10',
+            'title' => 'required',
+            'slug' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required',
             'category_id' => 'required|exists:categories,id',
             'user_id'=> 'required|exists:users,id',
         ];

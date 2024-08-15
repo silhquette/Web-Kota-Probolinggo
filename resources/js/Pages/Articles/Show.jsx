@@ -39,7 +39,7 @@ export default function ArticleIndex({ article, categories, latest, session }) {
             <div className="grid grid-cols-1 md:grid-cols-3 md:gap-16 max-w-full md:max-w-[1440px] mx-auto md:mt-16 px-6">
                 <article className="col-span-2 justify-start items-stretch flex flex-col gap-4 text-justify">
                     <img
-                        src="/assets/images/gambaran-umum-1.jpg"
+                        src={article.header ? `/storage/${article.header}` : "/assets/images/gambaran-umum-1.jpg"}
                         alt="header berita"
                         className="rounded-xl"
                     />

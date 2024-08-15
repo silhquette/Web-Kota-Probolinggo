@@ -1,17 +1,16 @@
-//import hook useState from react
 import React, { useState } from 'react';
 
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 
-//import inertia adapter
+// import inertia adapter
 import { Inertia } from '@inertiajs/inertia';
 
-//import quill
+// import quill
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-//import input field
+// import input field components
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
@@ -19,13 +18,18 @@ import PrimaryButton from '@/Components/PrimaryButton';
 
 export default function ArticleCreate({ errors, auth, categories }) {
 
-    //define state
+    // define state
     const [title, setTitle] = useState('');
     const [slug, setSlug] = useState('');
     const [excerpt, setExcerpt] = useState('');
     const [body, setBody] = useState('');
     const [category_id, setCategory_id] = useState('');
-    const user_id = auth.user.id
+    const user_id = auth.user.id;
+    const [image, setImage] = useState(null); // State untuk menyimpan file gambar
+
+    const handleImageChange = (e) => {
+        setImage(e.target.files[0]); // Menyimpan file gambar ke state
+    };
 
     // Konfigurasi modul Quill
     const modules = {
@@ -39,7 +43,6 @@ export default function ArticleCreate({ errors, auth, categories }) {
             ['clean']
         ],
         clipboard: {
-            // Tambahkan sinkronisasi dengan editor
             matchVisual: false,
         }
     };
@@ -52,34 +55,38 @@ export default function ArticleCreate({ errors, auth, categories }) {
         'link', 'image', 'video'
     ];
 
-    //function "storePost"
-    const storeArticle = async (e) => {
+    // function "storeArticle"
+    const storeArticle = (e) => {
         e.preventDefault();
 
-        Inertia.post('/article', {
-            title: title,
-            slug: slug,
-            excerpt: excerpt,
-            body: body,
-            category_id: category_id,
-            user_id: user_id,
-        });
-    }
+        // Menggunakan FormData untuk mengirim data termasuk gambar
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('slug', slug);
+        formData.append('excerpt', excerpt);
+        formData.append('body', body);
+        formData.append('category_id', category_id);
+        formData.append('user_id', user_id);
+        if (image) {
+            formData.append('thumbnail', image); // Menambahkan gambar ke FormData
+        }
+
+        Inertia.post('/article', formData);
+    };
 
     return (
         <AuthenticatedLayout
             user={auth.user}
-            header={<h2 className="font-semibold text-xl text-gray-800  leading-tight">Dashboard</h2>}
+            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
         >
             <Head title="Dashboard" />
 
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-8">
-                        <form onSubmit={storeArticle} className='grid grid-cols-2 gap-8'>
+                        <form onSubmit={storeArticle} className='grid grid-cols-2 gap-8' enctype="multipart/form-data">
                             <div>
                                 <InputLabel htmlFor="title" value="Judul Berita" />
-
                                 <TextInput
                                     id="title"
                                     type="text"
@@ -94,12 +101,11 @@ export default function ArticleCreate({ errors, auth, categories }) {
                                         setSlug(newTitle.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, ''));
                                     }}
                                 />
-
                                 <InputError message={errors.title} className="mt-2" />
                             </div>
+
                             <div>
                                 <InputLabel htmlFor="slug" value="Slug" />
-
                                 <TextInput
                                     id="slug"
                                     type="text"
@@ -109,12 +115,11 @@ export default function ArticleCreate({ errors, auth, categories }) {
                                     autoComplete="slug"
                                     readOnly={true}
                                 />
-
                                 <InputError message={errors.slug} className="mt-2" />
                             </div>
+
                             <div>
                                 <InputLabel htmlFor="excerpt" value="Ringkasan Singkat Berita" />
-
                                 <TextInput
                                     id="excerpt"
                                     type="text"
@@ -125,9 +130,9 @@ export default function ArticleCreate({ errors, auth, categories }) {
                                     isFocused={true}
                                     onChange={(e) => setExcerpt(e.target.value)}
                                 />
-
                                 <InputError message={errors.excerpt} className="mt-2" />
                             </div>
+
                             <div>
                                 <InputLabel htmlFor="category_id" value="Kategori" />
                                 <select
@@ -146,6 +151,20 @@ export default function ArticleCreate({ errors, auth, categories }) {
                                 </select>
                                 <InputError message={errors.category_id} className="mt-2" />
                             </div>
+
+                            <div>
+                                <InputLabel htmlFor="image" value="Upload Gambar" />
+                                <input
+                                    id="image"
+                                    type="file"
+                                    name="image"
+                                    accept="image/*"
+                                    onChange={handleImageChange}
+                                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                />
+                                <InputError message={errors.image} className="mt-2" />
+                            </div>
+
                             <div className='col-span-2'>
                                 <InputLabel htmlFor="body" value="Isi Berita" />
                                 <div className="bg-white border border-gray-300 rounded-xl overflow-hidden shadow-sm">
@@ -161,13 +180,12 @@ export default function ArticleCreate({ errors, auth, categories }) {
                             </div>
 
                             <div>
-                                <button type="submit" className="btn btn-md btn-success me-2">SAVE</button>
-                                <button type="reset" className="btn btn-md btn-warning">RESET</button>
+                                <PrimaryButton type="submit">SAVE</PrimaryButton>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </AuthenticatedLayout>
-    )
+    );
 }

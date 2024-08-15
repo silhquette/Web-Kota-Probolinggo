@@ -54,13 +54,25 @@ class ArticleController extends Controller
      */
     public function store(StoreArticleRequest $request)
     {
-        // create articles
-        Article::create($request->all());
+        // Ambil semua data dari request
+        $data = $request->all();
 
-        // redirect 
-        // return redirect()->route('article.index')->with('success', 'Artikel Berhasil Diunggah!');
+        // Cek jika ada file gambar yang di-upload
+        if ($request->hasFile('thumbnail')) {
+            // Simpan gambar ke direktori storage/app/public/thumbnails dan dapatkan path-nya
+            $data['header'] = $request->file('thumbnail')->store('thumbnails', 'public');
+        } else {
+            // Jika tidak ada gambar yang di-upload, pastikan nilai 'thumbnail' tidak diset sebagai 'null' atau string lainnya
+            $data['header'] = null;
+        }
+
+        // Buat artikel baru dengan data yang telah diproses
+        Article::create($data);
+
+        // Redirect ke halaman index dengan pesan sukses
         return redirect(route('article.index'))->with('success', 'Artikel Berhasil Diunggah!');
     }
+
 
     /**
      * Display the specified resource.
