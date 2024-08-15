@@ -110,7 +110,7 @@ export default function ArticleCreate({ errors, auth, categories }) {
                                     readOnly={true}
                                 />
 
-                                <InputError message={errors.title} className="mt-2" />
+                                <InputError message={errors.slug} className="mt-2" />
                             </div>
                             <div>
                                 <InputLabel htmlFor="excerpt" value="Ringkasan Singkat Berita" />
@@ -126,7 +126,7 @@ export default function ArticleCreate({ errors, auth, categories }) {
                                     onChange={(e) => setExcerpt(e.target.value)}
                                 />
 
-                                <InputError message={errors.title} className="mt-2" />
+                                <InputError message={errors.excerpt} className="mt-2" />
                             </div>
                             <div>
                                 <InputLabel htmlFor="category_id" value="Kategori" />

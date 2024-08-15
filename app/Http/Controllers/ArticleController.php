@@ -58,7 +58,8 @@ class ArticleController extends Controller
         Article::create($request->all());
 
         // redirect 
-        return redirect()->route('article.index')->with('success', 'Artikel Berhasil Diunggah!');
+        // return redirect()->route('article.index')->with('success', 'Artikel Berhasil Diunggah!');
+        return redirect(route('article.index'))->with('success', 'Artikel Berhasil Diunggah!');
     }
 
     /**
@@ -107,6 +108,7 @@ class ArticleController extends Controller
          $article->delete();
 
          //redirect
-         return redirect()->route('article.index')->with('success', 'Data Berhasil Dihapus!');
+        //  return redirect()->route('article.index')->with('success', 'Data Berhasil Dihapus!');
+         return redirect(route('article.index'))->with('success', 'Data Berhasil Dihapus!');
     }
 }
