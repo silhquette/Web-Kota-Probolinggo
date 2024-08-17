@@ -2,21 +2,18 @@
 import React from "react";
 
 //import layout
-import GuestLayout from "../../Layouts/GuestLayout";
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 
 //import Link
 import { Head, Link, useForm } from "@inertiajs/react";
-
-//import card
-import ArticleCard from "@/Components/ArticleCard";
 
 //import date time format
 import { format, parseISO } from "date-fns";
 import { id } from "date-fns/locale";
 
-import './../../../css/custom-styles.css'
+import './../../../../css/custom-styles.css'
 
-export default function ArticleIndex({ article, categories, latest, session }) {
+export default function ArticleIndex({ article, categories, latest, auth }) {
     const transformHtml = (html) => {
         // Menambahkan kelas kustom pada elemen HTML
         return html
@@ -33,10 +30,13 @@ export default function ArticleIndex({ article, categories, latest, session }) {
     };
 
     return (
-        <GuestLayout>
+        <AuthenticatedLayout
+            user={auth.user}
+            header={<h2 className="font-semibold text-xl text-gray-800  leading-tight">My Article - {article.title}</h2>}
+        >
             <Head title="Berita" />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 md:gap-16 max-w-full md:max-w-[1440px] mx-auto md:mt-16 px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 md:gap-16 max-w-full md:max-w-[1440px] mx-auto md:mt-12 p-6 bg-white rounded-xl">
                 <article className="col-span-2 justify-start items-stretch flex flex-col gap-4 text-justify">
                     <img
                         src={article.header ? `/storage/${article.header}` : "/assets/images/gambaran-umum-1.jpg"}
@@ -193,6 +193,6 @@ export default function ArticleIndex({ article, categories, latest, session }) {
                     </div>
                 </aside>
             </div>
-        </GuestLayout>
+        </AuthenticatedLayout>
     );
 }

@@ -1,8 +1,11 @@
+import React, { useState } from 'react';
+
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import { Link } from "@inertiajs/react";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
+import PrimaryButton from '@/Components/PrimaryButton';
 
 //import Footer
 import Footer from "@/Components/Footer";
@@ -54,42 +57,10 @@ export default function Guest({ children }) {
     ];
 
     const publicServices = [
-        // {
-        //     label: "Alur dan Tata Cara",
-        //     submenu: [
-        //         {
-        //             label: "Permohonan Informasi",
-        //             link: "/layanan/tata-cara-permohonan-informasi",
-        //         },
-        //         {   label: "Keberatan Informasi", 
-        //             link: "/layanan/tata-cara-keberatan-informasi" },
-        //         {
-        //             label: "Sengketa Informasi Publik",
-        //             link: "/layanan/tata-cara-sengketa-informasi",
-        //         },
-        //         {
-        //             label: "Alasan Pengajuan Keberatan",
-        //             link: "/layanan/alasan-pengajuan-keberatan",
-        //         },
-        //     ],
-        // },
         {
             label: "Tata Cara Pengajuan",
             link: "/layanan/tata-cara-pengajuan"
         },
-        // {
-        //     label: "Permohonan Informasi",
-        //     submenu: [
-        //         {   
-        //             label: "Permohonan Informasi Online", 
-        //             link: "https://docs.google.com/forms/d/e/1FAIpQLSdbokgEv4HFV1CD7LZcAbDfoxY5a3cSHRnWWv-ylaSWY9pSOg/viewform" 
-        //         },
-        //         {   
-        //             label: "Formulir Permohonan Informasi", 
-        //             link: "/layanan/form-permohonan" 
-        //         },
-        //     ],
-        // },
         {
             label: "Keberatan Permohonan Informasi",
             submenu: [
@@ -131,6 +102,13 @@ export default function Guest({ children }) {
             link: "/statistic/daftar-kota",
         },
     ];
+
+    const [query, setQuery] = useState('');
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        window.location.href = `/article/all?query=${query}`
+    }
 
     return (
         <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
@@ -270,13 +248,16 @@ export default function Guest({ children }) {
                             Berita
                         </NavLink>
                     </div>
-                    <div className="flex items-center justify-center">
+                    <form onSubmit={handleSearch} className="flex items-center justify-center gap-4">
                         <input
                             type="text"
-                            placeholder="Cari Layanan"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            placeholder="Cari Berita"
                             className="w-[300px] h-10 rounded-xl border border-gray-200"
                         />
-                    </div>
+                        <PrimaryButton className='h-10 rounded-xl'>Cari</PrimaryButton>
+                    </form>
                 </div>
             </div>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
@@ -15,13 +16,13 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        
-        // dump($categories);
-        
         // return view
         if (Auth::user()) {
             // get all articles
-            $articles = Auth::user()->articles->load(['category', 'user']);
+            $articles = $articles = Auth::user()->articles()
+            ->latest()
+            ->with(['category', 'user'])
+            ->get();
             return inertia('Articles/User/Index', [
                 'articles' => $articles,
             ]);
@@ -36,6 +37,20 @@ class ArticleController extends Controller
                 'categories' => $categories
             ]);
         }
+    }
+    
+    /**
+     * Display all Articles
+     *
+     * @return void
+     */
+    public function all()
+    {
+        $articles = Article::with(['category', 'user'])->latest()->get();
+
+        return Inertia('Articles/All', [
+            'articles' => $articles
+        ]);
     }
 
     /**
@@ -88,11 +103,19 @@ class ArticleController extends Controller
         //get latest posts
         $latest = Article::with(['category', 'user'])->latest()->limit(7)->get();
 
-        return inertia('Articles/Show', [
-            'article' => $article,
-            'categories' => $categories,
-            'latest' => $latest,
-        ]);
+        if (Auth::user()) {
+            return inertia('Articles/User/Show', [
+                'article' => $article,
+                'categories' => $categories,
+                'latest' => $latest,
+            ]);
+        } else {
+            return inertia('Articles/Show', [
+                'article' => $article,
+                'categories' => $categories,
+                'latest' => $latest,
+            ]);
+        }
     }
 
     /**

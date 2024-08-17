@@ -48,10 +48,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('article', ArticleController::class)
-->middleware('auth')
+    ->middleware('auth')
     ->except(['index', 'show']);
-
 Route::get('article', [ArticleController::class, 'index'])->name('article.index');
+Route::get('article/all', [ArticleController::class, 'all'])->name('article.all');
 Route::get('article/{article}', [ArticleController::class, 'show'])->name('article.show');
 
 // Route::resource('/article', ArticleController::class);
