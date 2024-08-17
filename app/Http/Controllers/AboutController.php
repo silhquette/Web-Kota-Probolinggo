@@ -68,6 +68,10 @@ class AboutController extends Controller
         return inertia('About/PPID/Maklumat');
     }
 
+    public function profilPPID() {
+        return inertia('About/PPID/Profil');
+    }
+
     public function pembantu() {
         $officers = Officer::all();
 

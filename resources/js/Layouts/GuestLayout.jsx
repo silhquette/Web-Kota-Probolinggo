@@ -46,6 +46,7 @@ export default function Guest({ children }) {
         {
             label: "PPID",
             submenu: [
+                { label: "Profil PPID", link: "/ppid/profil" },
                 { label: "Visi dan Misi", link: "/ppid/visi-misi" },
                 { label: "Tupoksi", link: "/ppid/tupoksi" },
                 { label: "Struktur Organisasi PPID", link: "/ppid/struktur" },

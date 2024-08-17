@@ -79,6 +79,7 @@ Route::prefix('/ppid')->group(function () {
     Route::get('/sk-sop', [AboutController::class, 'suratKeterangan'])->name('ppid.suratKeterangan');
     Route::get('/maklumat', [AboutController::class, 'maklumatPPID'])->name('ppid.maklumat');
     Route::get('/pembantu', [AboutController::class, 'pembantu'])->name('ppid.pembantu');
+    Route::get('/profil', [AboutController::class, 'profilPPID'])->name('ppid.profil');
 });
 
 Route::prefix('/layanan')->group(function () {
